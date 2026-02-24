@@ -21,6 +21,8 @@ const Navbar = () => {
     { to: '/history', label: 'History' },
   ] : [
     { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
+    { to: '/contact', label: 'Contact' },
   ]
 
   return (
