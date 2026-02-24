@@ -1,0 +1,21 @@
+{
+  "name": "sustainable-fertilizer-optimizer",
+  "version": "1.0.0",
+  "description": "Sustainable Fertilizer Usage Optimizer Application - Full Stack",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && node utils/initDb.js",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "agriculture",
+    "fertilizer",
+    "sustainability",
+    "farming",
+    "optimization"
+  ],
+  "author": "",
+  "license": "MIT"
+}

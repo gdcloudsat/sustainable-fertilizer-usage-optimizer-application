@@ -1,0 +1,61 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "EcoFertilizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e11]: EcoFertilizer
+      - link "Home" [ref=e13] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e15]:
+        - link "Login" [ref=e16] [cursor=pointer]:
+          - /url: /login
+        - link "Get Started" [active] [ref=e17] [cursor=pointer]:
+          - /url: /register
+  - main [ref=e18]:
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - img [ref=e137]
+        - heading "Create Account" [level=1] [ref=e140]
+        - paragraph [ref=e141]: Start optimizing your fertilizer usage
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - generic [ref=e144]: Full Name
+          - generic [ref=e145]:
+            - img [ref=e146]
+            - textbox "John Doe" [ref=e149]
+        - generic [ref=e150]:
+          - generic [ref=e151]: Email Address
+          - generic [ref=e152]:
+            - img [ref=e153]
+            - textbox "you@example.com" [ref=e156]
+        - generic [ref=e157]:
+          - generic [ref=e158]: Password
+          - generic [ref=e159]:
+            - img [ref=e160]
+            - textbox "••••••••" [ref=e163]
+            - button [ref=e164] [cursor=pointer]:
+              - img [ref=e165]
+        - generic [ref=e168]:
+          - generic [ref=e169]: Confirm Password
+          - generic [ref=e170]:
+            - img [ref=e171]
+            - textbox "••••••••" [ref=e174]
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - generic [ref=e177]: Farm Location
+            - generic [ref=e178]:
+              - img [ref=e179]
+              - textbox "City, Country" [ref=e182]
+          - generic [ref=e183]:
+            - generic [ref=e184]: Farm Size (acres)
+            - generic [ref=e185]:
+              - img [ref=e186]
+              - spinbutton [ref=e192]
+        - button "Create Account" [ref=e193] [cursor=pointer]
+      - paragraph [ref=e195]:
+        - text: Already have an account?
+        - link "Sign in" [ref=e196] [cursor=pointer]:
+          - /url: /login
+  - contentinfo [ref=e129]:
+    - paragraph [ref=e131]: © 2024 Sustainable Fertilizer Optimizer. Promoting sustainable agriculture.
