@@ -4,6 +4,8 @@ import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
 import Layout from './components/Layout'
 import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
+import ContactUs from './pages/ContactUs'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
@@ -45,6 +47,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="contact" element={<ContactUs />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="dashboard" element={
