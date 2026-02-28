@@ -27,11 +27,20 @@ A comprehensive full-stack application that helps farmers optimize fertilizer us
 - **JWT** for authentication
 - **Express Validator** for input validation
 
-### Frontend
+### User Frontend
 - **React 18** with Vite
 - **React Router** for navigation
 - **Tailwind CSS** for styling
 - **Axios** for API communication
+- **React Hot Toast** for notifications
+- **Lucide React** for icons
+
+### Admin Panel
+- **React 18** with Vite
+- **React Router** for navigation
+- **Tailwind CSS** for styling
+- **Axios** for API communication
+- **Context API** for state management
 - **React Hot Toast** for notifications
 - **Lucide React** for icons
 
@@ -85,6 +94,36 @@ npm run dev
 
 8. Open your browser and navigate to `http://localhost:3000`
 
+### Setting Up the Admin Panel
+
+The admin panel is a separate application for managing the platform.
+
+1. Install admin panel dependencies:
+```bash
+cd admin-frontend
+npm install
+```
+
+2. Create an admin user:
+```bash
+npm run create-admin
+```
+
+3. Start the admin panel:
+```bash
+npm run dev:admin
+```
+
+4. Open your browser and navigate to `http://localhost:3001`
+
+Default admin credentials:
+- Email: `admin@example.com`
+- Password: `admin123`
+
+⚠️ **Important**: Change the admin password after first login!
+
+For detailed admin panel setup and usage, see [ADMIN_SETUP.md](./ADMIN_SETUP.md).
+
 ## API Endpoints
 
 ### Authentication
@@ -120,6 +159,23 @@ npm run dev
 - `GET /api/weather/current` - Get current weather
 - `GET /api/weather/forecast` - Get weather forecast
 
+### Admin (Protected)
+- `GET /api/admin/stats` - Get dashboard statistics
+- `GET /api/admin/users` - Get all users
+- `GET /api/admin/users/:id` - Get single user
+- `PATCH /api/admin/users/:id/status` - Update user status
+- `DELETE /api/admin/users/:id` - Delete user
+- `GET /api/admin/fertilizers` - Get all fertilizers
+- `POST /api/admin/fertilizers` - Create fertilizer
+- `GET /api/admin/fertilizers/:id` - Get single fertilizer
+- `PUT /api/admin/fertilizers/:id` - Update fertilizer
+- `DELETE /api/admin/fertilizers/:id` - Delete fertilizer
+- `GET /api/admin/crops` - Get all crops
+- `POST /api/admin/crops` - Create crop
+- `GET /api/admin/crops/:id` - Get single crop
+- `PUT /api/admin/crops/:id` - Update crop
+- `DELETE /api/admin/crops/:id` - Delete crop
+
 ## Recommendation Algorithm
 
 The recommendation engine calculates optimal fertilizer usage by:
@@ -143,7 +199,8 @@ The recommendation engine calculates optimal fertilizer usage by:
 sustainable-fertilizer-optimizer/
 ├── backend/
 │   ├── middleware/
-│   │   └── auth.js
+│   │   ├── auth.js
+│   │   └── admin.js
 │   ├── models/
 │   │   ├── Crop.js
 │   │   ├── Fertilizer.js
@@ -151,6 +208,7 @@ sustainable-fertilizer-optimizer/
 │   │   ├── Soil.js
 │   │   └── User.js
 │   ├── routes/
+│   │   ├── admin.js
 │   │   ├── auth.js
 │   │   ├── crops.js
 │   │   ├── fertilizers.js
@@ -160,6 +218,7 @@ sustainable-fertilizer-optimizer/
 │   ├── services/
 │   │   └── recommendationEngine.js
 │   ├── utils/
+│   │   ├── createAdmin.js
 │   │   ├── initDb.js
 │   │   └── seedData.js
 │   ├── .env
@@ -195,7 +254,42 @@ sustainable-fertilizer-optimizer/
 │   ├── postcss.config.js
 │   ├── tailwind.config.js
 │   └── vite.config.js
+├── admin-frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── ProtectedRoute.jsx
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   ├── layouts/
+│   │   │   └── AdminLayout.jsx
+│   │   ├── pages/
+│   │   │   ├── auth/
+│   │   │   │   └── Login.jsx
+│   │   │   ├── dashboard/
+│   │   │   │   └── Dashboard.jsx
+│   │   │   ├── users/
+│   │   │   │   ├── UserList.jsx
+│   │   │   │   └── ViewUser.jsx
+│   │   │   ├── fertilizers/
+│   │   │   │   ├── FertilizerList.jsx
+│   │   │   │   ├── FertilizerForm.jsx
+│   │   │   │   └── ViewFertilizer.jsx
+│   │   │   └── crops/
+│   │   │       ├── CropList.jsx
+│   │   │       ├── CropForm.jsx
+│   │   │       └── ViewCrop.jsx
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── vite.config.js
 ├── .gitignore
+├── ADMIN_SETUP.md
 └── README.md
 ```
 

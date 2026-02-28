@@ -9,6 +9,8 @@ node_modules/
 # Production
 frontend/dist/
 frontend/build/
+admin-frontend/dist/
+admin-frontend/build/
 
 # Environment files
 .env

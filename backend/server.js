@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sustainab
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/admin', require('./routes/admin'));
 app.use('/api/soil', require('./routes/soil'));
 app.use('/api/crops', require('./routes/crops'));
 app.use('/api/fertilizers', require('./routes/fertilizers'));

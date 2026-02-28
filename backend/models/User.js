@@ -29,6 +29,16 @@ const userSchema = new mongoose.Schema({
   preferredCrops: [{
     type: String
   }],
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
+  },
+  status: {
+    type: String,
+    enum: ['active', 'blocked'],
+    default: 'active'
+  },
   createdAt: {
     type: Date,
     default: Date.now
