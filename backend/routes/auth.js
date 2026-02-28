@@ -48,6 +48,8 @@ router.post('/register', [
         id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
+        status: user.status,
         farmLocation: user.farmLocation,
         farmSize: user.farmSize,
         preferredCrops: user.preferredCrops
@@ -90,6 +92,8 @@ router.post('/login', [
         id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
+        status: user.status,
         farmLocation: user.farmLocation,
         farmSize: user.farmSize,
         preferredCrops: user.preferredCrops
@@ -108,6 +112,8 @@ router.get('/me', authMiddleware, async (req, res) => {
       id: req.user._id,
       name: req.user.name,
       email: req.user.email,
+      role: req.user.role,
+      status: req.user.status,
       farmLocation: req.user.farmLocation,
       farmSize: req.user.farmSize,
       preferredCrops: req.user.preferredCrops
