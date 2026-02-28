@@ -1,0 +1,115 @@
+- generic [ref=e2]:
+  - status [ref=e204]: Account created successfully!
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link "EcoFertilizer" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]: EcoFertilizer
+        - generic [ref=e12]:
+          - link "Dashboard" [ref=e205] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Soil Data" [ref=e206] [cursor=pointer]:
+            - /url: /soil-input
+          - link "Crops" [ref=e207] [cursor=pointer]:
+            - /url: /crop-selection
+          - link "Recommendations" [ref=e208] [cursor=pointer]:
+            - /url: /recommendations
+          - link "History" [ref=e209] [cursor=pointer]:
+            - /url: /history
+        - generic [ref=e17]:
+          - link "Test Farmer" [ref=e210] [cursor=pointer]:
+            - /url: /profile
+            - img [ref=e211]
+            - generic [ref=e214]: Test Farmer
+          - button "Logout" [ref=e215] [cursor=pointer]:
+            - img [ref=e216]
+            - generic [ref=e219]: Logout
+    - main [ref=e20]:
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - heading "Welcome back, Test Farmer!" [level=1] [ref=e223]
+            - paragraph [ref=e224]: Here's what's happening with your farm optimization
+          - generic [ref=e225]:
+            - link "Add Soil Data" [ref=e226] [cursor=pointer]:
+              - /url: /soil-input
+              - img [ref=e227]
+              - text: Add Soil Data
+            - link "New Recommendation" [ref=e231] [cursor=pointer]:
+              - /url: /recommendations
+              - img [ref=e232]
+              - text: New Recommendation
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - img [ref=e238]
+              - generic [ref=e241]: Total Recommendations
+            - paragraph [ref=e242]: "0"
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - img [ref=e245]
+              - generic [ref=e248]: Avg. Sustainability Score
+            - paragraph [ref=e249]: N/A
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - img [ref=e252]
+              - generic [ref=e255]: Total Profit Estimate
+            - paragraph [ref=e256]: $0
+        - generic [ref=e257]:
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - heading "Recent Soil Data" [level=2] [ref=e260]
+              - link "View All" [ref=e261] [cursor=pointer]:
+                - /url: /soil-input
+                - text: View All
+                - img [ref=e262]
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - heading "No Soil Data Yet" [level=3] [ref=e269]
+              - paragraph [ref=e270]: Add your first soil test to get started
+              - link "Add Soil Data" [ref=e271] [cursor=pointer]:
+                - /url: /soil-input
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - heading "Latest Recommendation" [level=2] [ref=e274]
+              - link "View History" [ref=e275] [cursor=pointer]:
+                - /url: /history
+                - text: View History
+                - img [ref=e276]
+            - generic [ref=e278]:
+              - img [ref=e279]
+              - heading "No Recommendations Yet" [level=3] [ref=e282]
+              - paragraph [ref=e283]: Generate your first fertilizer recommendation
+              - link "Get Recommendation" [ref=e284] [cursor=pointer]:
+                - /url: /recommendations
+        - generic [ref=e285]:
+          - heading "Quick Actions" [level=2] [ref=e286]
+          - generic [ref=e287]:
+            - link "Add Soil Data Input test results" [ref=e288] [cursor=pointer]:
+              - /url: /soil-input
+              - img [ref=e290]
+              - generic [ref=e294]:
+                - paragraph [ref=e295]: Add Soil Data
+                - paragraph [ref=e296]: Input test results
+            - link "Select Crops Choose what to grow" [ref=e297] [cursor=pointer]:
+              - /url: /crop-selection
+              - img [ref=e299]
+              - generic [ref=e302]:
+                - paragraph [ref=e303]: Select Crops
+                - paragraph [ref=e304]: Choose what to grow
+            - link "Get Recommendation Optimize fertilizer" [ref=e305] [cursor=pointer]:
+              - /url: /recommendations
+              - img [ref=e307]
+              - generic [ref=e310]:
+                - paragraph [ref=e311]: Get Recommendation
+                - paragraph [ref=e312]: Optimize fertilizer
+            - link "View History Past recommendations" [ref=e313] [cursor=pointer]:
+              - /url: /history
+              - img [ref=e315]
+              - generic [ref=e318]:
+                - paragraph [ref=e319]: View History
+                - paragraph [ref=e320]: Past recommendations
+    - contentinfo [ref=e131]:
+      - paragraph [ref=e133]: © 2024 Sustainable Fertilizer Optimizer. Promoting sustainable agriculture.
