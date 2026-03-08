@@ -145,9 +145,9 @@ class RecommendationEngine {
         
         // Update remaining gaps
         const nutrientContent = bestFertilizer.nutrientContent?.[nutrient] || 0;
-        remainingGaps[nitrogen] = Math.max(0, remainingGaps[nitrogen] - (quantity * nutrientContent / 100));
-        remainingGaps[phosphorus] = Math.max(0, remainingGaps[phosphorus] - (quantity * (bestFertilizer.nutrientContent?.phosphorus || 0) / 100));
-        remainingGaps[potassium] = Math.max(0, remainingGaps[potassium] - (quantity * (bestFertilizer.nutrientContent?.potassium || 0) / 100));
+        remainingGaps['nitrogen'] = Math.max(0, remainingGaps['nitrogen'] - (quantity * nutrientContent / 100));
+        remainingGaps['phosphorus'] = Math.max(0, remainingGaps['phosphorus'] - (quantity * (bestFertilizer.nutrientContent?.phosphorus || 0) / 100));
+        remainingGaps['potassium'] = Math.max(0, remainingGaps['potassium'] - (quantity * (bestFertilizer.nutrientContent?.potassium || 0) / 100));
       }
     }
     
