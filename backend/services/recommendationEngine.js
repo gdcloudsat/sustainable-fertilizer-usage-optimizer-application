@@ -125,6 +125,7 @@ class RecommendationEngine {
       );
       
       if (bestFertilizer) {
+        const nutrientContent = bestFertilizer.nutrientContent?.[nutrient] || 0;
         const quantity = this.calculateFertilizerQuantity(
           bestFertilizer,
           nutrient,
@@ -143,11 +144,8 @@ class RecommendationEngine {
           cost: Math.round(cost * 100) / 100
         });
         
-        // Update remaining gaps
-        const nutrientContent = bestFertilizer.nutrientContent?.[nutrient] || 0;
-        remainingGaps['nitrogen'] = Math.max(0, remainingGaps['nitrogen'] - (quantity * nutrientContent / 100));
-        remainingGaps['phosphorus'] = Math.max(0, remainingGaps['phosphorus'] - (quantity * (bestFertilizer.nutrientContent?.phosphorus || 0) / 100));
-        remainingGaps['potassium'] = Math.max(0, remainingGaps['potassium'] - (quantity * (bestFertilizer.nutrientContent?.potassium || 0) / 100));
+        // Update remaining gaps - only subtract the nutrient this fertilizer provides
+        remainingGaps[nutrient] = Math.max(0, remainingGaps[nutrient] - (quantity * nutrientContent / 100));
       }
     }
     

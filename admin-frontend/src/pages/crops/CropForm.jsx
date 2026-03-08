@@ -30,6 +30,15 @@ const CropForm = ({ crop, onClose }) => {
       texture: [],
       drainage: 'well-drained'
     },
+    expectedYield: {
+      value: 1000,
+      unit: 'kg/acre'
+    },
+    marketPrice: {
+      value: 0,
+      currency: 'USD',
+      unit: 'kg'
+    },
     sustainabilityScore: 50
   });
 
@@ -59,6 +68,15 @@ const CropForm = ({ crop, onClose }) => {
         soilPreferences: crop.soilPreferences || {
           texture: [],
           drainage: 'well-drained'
+        },
+        expectedYield: crop.expectedYield || {
+          value: 1000,
+          unit: 'kg/acre'
+        },
+        marketPrice: crop.marketPrice || {
+          value: 0,
+          currency: 'USD',
+          unit: 'kg'
         },
         sustainabilityScore: crop.sustainabilityScore || 50
       });
@@ -232,6 +250,82 @@ const CropForm = ({ crop, onClose }) => {
                     <option value="moderate">Moderate</option>
                     <option value="poor">Poor</option>
                   </select>
+                </div>
+              </div>
+
+              {/* Expected Yield */}
+              <div className="border-t pt-4">
+                <h4 className="text-md font-semibold text-gray-900 mb-3">Expected Yield</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Value</label>
+                    <input
+                      type="number"
+                      name="expectedYield.value"
+                      value={formData.expectedYield.value}
+                      onChange={handleChange}
+                      min="0"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Unit</label>
+                    <select
+                      name="expectedYield.unit"
+                      value={formData.expectedYield.unit}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    >
+                      <option value="kg/acre">kg/acre</option>
+                      <option value="tons/acre">tons/acre</option>
+                      <option value="quintals/acre">quintals/acre</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Market Price */}
+              <div className="border-t pt-4">
+                <h4 className="text-md font-semibold text-gray-900 mb-3">Market Price</h4>
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Value</label>
+                    <input
+                      type="number"
+                      name="marketPrice.value"
+                      value={formData.marketPrice.value}
+                      onChange={handleChange}
+                      min="0"
+                      step="0.01"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Currency</label>
+                    <select
+                      name="marketPrice.currency"
+                      value={formData.marketPrice.currency}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    >
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Unit</label>
+                    <select
+                      name="marketPrice.unit"
+                      value={formData.marketPrice.unit}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    >
+                      <option value="kg">kg</option>
+                      <option value="ton">ton</option>
+                      <option value="lb">lb</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
